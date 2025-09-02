@@ -1,0 +1,192 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulir Pendaftaran Siswa Baru</title>
+  <style>
+    
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body{
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+       background-image: url('https://gifs.alphacoders.com/gifs/view/220764');
+      background-size:cover;      
+      background-position: center;  
+      background-repeat: repeat;
+      
+      margin: 0;
+      padding: 24px;
+      color: #222;
+      line-height: 1.4;
+    }
+
+    .container{
+      max-width: 720px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 28px 24px;
+      border-radius: 14px;
+      box-shadow: 10px 6px 22px rgba(0,0,0,.06);
+      border: 1px solid #ffffff;
+      
+    }
+
+    h1{
+      margin: 0 0 22px;
+      font-size: 24px;
+      letter-spacing: .3px;
+      font-weight: 700;
+    }
+
+    .field{
+      margin-bottom: 16px;
+    }
+
+    label{
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    select,
+    textarea{
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #cfd3dc;
+      border-radius: 8px;
+      background: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: border-color .15s ease;
+    }
+
+    textarea{ min-height: 96px; resize: vertical; }
+
+    input:focus, select:focus, textarea:focus{
+      border-color: #4f46e5;
+    }
+
+    .inline{
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .radio-group{
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .actions{
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    button, input[type="reset"]{
+      border: 0;
+      padding: 10px 16px;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]{
+      background: #4f46e5;
+      color: #fff;
+    }
+
+    input[type="reset"]{
+      background: #eef1f7;
+      color: #222;
+    }
+
+    small.helper{
+      display: block;
+      margin-top: 6px;
+      color: #666;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Formulir Pendaftaran Siswa Baru</h1>
+
+    <form action="#" method="post" enctype="multipart/form-data" novalidate>
+      <div class="field">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" placeholder="Nama lengkap" required />
+      </div>
+
+      <div class="field">
+        <label for="nisn">NISN / NIS</label>
+        <input type="text" id="nisn" name="nisn" placeholder="Contoh: 0123456789" required />
+      </div>
+
+      <div class="field">
+        <label>Jenis Kelamin</label>
+        <div class="radio-group">
+          <label class="inline"><input type="radio" name="jk" value="Laki-laki" required /> Laki-laki</label>
+          <label class="inline"><input type="radio" name="jk" value="Perempuan" /> Perempuan</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="tmplahir">Tempat Lahir</label>
+        <input type="text" id="tmplahir" name="tmplahir" placeholder="Kota/Kabupaten" required />
+      </div>
+
+      <div class="field">
+        <label for="tgllahir">Tanggal Lahir</label>
+        <input type="date" id="tgllahir" name="tgllahir" required />
+      </div>
+
+      <div class="field">
+        <label for="alamat">Alamat</label>
+        <textarea id="alamat" name="alamat" placeholder="Tulis alamat lengkap" required></textarea>
+      </div>
+
+      <div class="field">
+        <label for="telp">Nomor Telepon</label>
+        <input type="text" id="telp" name="telp" placeholder="08xxxxxxxxxx" />
+        <small class="helper">Gunakan angka saja.</small>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="nama@email.com" />
+      </div>
+
+      <div class="field">
+        <label for="jurusan">Jurusan yang dipilih</label>
+        <select id="jurusan" name="jurusan" required>
+          <option value="">– Pilih Jurusan –</option>
+          <option value="RPL">Rekayasa Perangkat Lunak (RPL)</option>
+          <option value="TKJ">Teknik Komputer & Jaringan (TKJ)</option>
+          <option value="DKV">Desain Komunikasi Visual (DKV)</option>
+          <option value="AKL">Akuntansi & Keuangan Lembaga (AKL)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="foto">Upload Foto</label>
+        <input type="file" id="foto" name="foto" accept="image/*" />
+        <small class="helper">Format gambar (JPG/PNG). Maks. 2 MB.</small>
+      </div>
+
+      <div class="actions">
+        <button type="submit">Kirim</button>
+        <input type="reset" value="Reset" />
+      </div>
+    </form>
+  </div>
+</body>
+</html>
